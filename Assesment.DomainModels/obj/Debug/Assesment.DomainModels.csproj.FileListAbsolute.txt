@@ -1,0 +1,12 @@
+C:\Users\jay.chaniyara\Documents\Project\Assesment-New\Assesment.DomainModels\bin\Debug\Assesment.DomainModels.dll
+C:\Users\jay.chaniyara\Documents\Project\Assesment-New\Assesment.DomainModels\bin\Debug\Assesment.DomainModels.pdb
+C:\Users\jay.chaniyara\Documents\Project\Assesment-New\Assesment.DomainModels\obj\Debug\Assesment.DomainModels.csproj.AssemblyReference.cache
+C:\Users\jay.chaniyara\Documents\Project\Assesment-New\Assesment.DomainModels\obj\Debug\Assesment.DomainModels.csproj.CoreCompileInputs.cache
+C:\Users\jay.chaniyara\Documents\Project\Assesment-New\Assesment.DomainModels\obj\Debug\Assesment.DomainModels.dll
+C:\Users\jay.chaniyara\Documents\Project\Assesment-New\Assesment.DomainModels\obj\Debug\Assesment.DomainModels.pdb
+C:\Users\jay.chaniyara\Documents\Project\Assesment\Assesment.DomainModels\bin\Debug\Assesment.DomainModels.dll
+C:\Users\jay.chaniyara\Documents\Project\Assesment\Assesment.DomainModels\bin\Debug\Assesment.DomainModels.pdb
+C:\Users\jay.chaniyara\Documents\Project\Assesment\Assesment.DomainModels\obj\Debug\Assesment.DomainModels.csproj.AssemblyReference.cache
+C:\Users\jay.chaniyara\Documents\Project\Assesment\Assesment.DomainModels\obj\Debug\Assesment.DomainModels.csproj.CoreCompileInputs.cache
+C:\Users\jay.chaniyara\Documents\Project\Assesment\Assesment.DomainModels\obj\Debug\Assesment.DomainModels.dll
+C:\Users\jay.chaniyara\Documents\Project\Assesment\Assesment.DomainModels\obj\Debug\Assesment.DomainModels.pdb

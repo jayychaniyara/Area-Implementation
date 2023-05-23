@@ -1,0 +1,22 @@
+﻿@model Assesment.DomainModels.Brand
+
+@{
+    ViewBag.Title = "DeleteBrand";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>DeleteBrand</h2>
+
+<form action="/Admin/Brand/DeleteBrand/@Model.BrandId" class="mt-4" method="post">
+
+    <div class="form-row row">
+        <div class="form-group col-md-6">
+            <label for="BrandName" class="m-2">Are you sure you want to delete <b>"@Model.BrandName"</b> ?</label>
+            <input type="hidden" name="BrandId" value="@Model.BrandId" />
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-danger m-2">Delete</button>
+    <a class="btn btn-dark" href="/Admin/Brand/Index">Cancel</a>
+
+</form>

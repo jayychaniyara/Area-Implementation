@@ -1,0 +1,22 @@
+﻿@model Assesment.DomainModels.Category
+
+@{
+    ViewBag.Title = "DeleteCategory";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Delete Category</h2>
+
+<form action="/Admin/Category/DeleteCategory/@Model.CategoryId" class="mt-4" method="post">
+
+    <div class="form-row row">
+        <div class="form-group col-md-6">
+            <label for="BrandName" class="m-2">Are you sure you want to delete <b>"@Model.CategoryName"</b> ?</label>
+            <input type="hidden" name="BrandId" value="@Model.CategoryId" />
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-danger m-2">Delete</button>
+    <a class="btn btn-dark" href="/Admin/Category/Index">Cancel</a>
+
+</form>

@@ -1,0 +1,49 @@
+﻿a {
+    text-decoration: none;
+    color: #00818a;
+}
+
+    a.navbar-item, .navbar-link {
+        cursor: pointer;
+    }
+
+
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #3A3B3C;
+}
+
+.nav-link {
+    color: #262626;
+}
+
+.navbar-toggler:focus {
+    outline: none !important;
+    box-shadow: none;
+}
+
+.nav-pills .nav-link {
+    background: 0 0;
+    border: 1px solid #dee2e6;
+    border-radius: 0px;
+    padding-right: 45px;
+    padding-left: 45px;
+}
+
+.nav-link:hover {
+    color: white;
+    background-color: #3A3B3C;
+}
+
+.registerButton {
+    border: 1px solid black;
+    background-color: transparent;
+    border-radius: 0px;
+    color: black;
+}
+
+    .registerButton:hover {
+        background-color: #3A3B3C;
+        color: white;
+    }

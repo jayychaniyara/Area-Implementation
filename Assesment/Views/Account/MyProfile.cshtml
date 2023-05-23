@@ -1,0 +1,37 @@
+﻿@model Assesment.Identity.ApplicationUser
+
+@{
+    ViewBag.Title = "MyProfile";
+    Layout = "~/Views/Shared/_UserHeadercshtml.cshtml";
+}
+
+
+<table class="table table-light mt-4">
+    <tr>
+        <th>Username</th>
+        <th>@Model.UserName</th>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <th>@Model.Email</th>
+    </tr>
+    <tr>
+        <th>Date of Birth</th>
+        <th>@Model.Birthday</th>
+    </tr>
+    <tr>
+        <th>Active status</th>
+        <th>@Model.Active</th>
+    </tr>
+    <tr>
+        <th>Gender</th>
+        <th>@Model.Gender</th>
+    </tr>
+    <tr>
+        <th>Phone Number</th>
+        <th>@Model.PhoneNumber</th>
+    </tr>
+</table>
+
+<a href="/Home/Index" class="btn btn-outline-dark">Back to home</a>
+

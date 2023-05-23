@@ -1,0 +1,58 @@
+﻿@model Assesment.DomainModels.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<small><span class="text-danger h3"> @ViewBag.ProductName</span> Details</small>
+
+<table class="table table-dark table-striped mt-3">
+    <tr>
+        <th>Product Id</th>
+        <td>@Model.ProductID</td>
+    </tr>
+    <tr>
+        <th>Product Name</th>
+        <td>@Model.ProductName</td>
+    </tr>
+    <tr>
+        <th>Date of purchase</th>
+        <td>@Model.DateOfPurchase.Value.ToString("yyyy-MM-dd")</td>
+    </tr>
+    <tr>
+        <th>Availablity Status</th>
+        <td>@Model.AvailablityStatus</td>
+    </tr>
+    <tr>
+        <th>Category Name</th>
+        <td>
+            @if (@Model.Category != null)
+            {
+                <span>@Model.Category.CategoryName</span>
+            }
+        </td>
+    <tr>
+        <th>Brand Name</th>
+        <td>
+            @if (@Model.Brand != null)
+            {
+                <span>@Model.Brand.BrandName</span>
+            }
+        </td>
+    </tr>
+    <tr>
+        <th>Active</th>
+        <td>@Model.Active</td>
+    </tr>
+    <tr>
+        <th>Price</th>
+        <td>@Model.Price</td>
+    </tr>
+    <tr>
+        <th>Image</th>
+        <td><img src="data:image;base64,@Model.Photo" width="200px" /></td>
+    </tr>
+</table>
+
+<a class="btn btn-outline-dark" href="/Admin/Product/Index">Back to Products</a>

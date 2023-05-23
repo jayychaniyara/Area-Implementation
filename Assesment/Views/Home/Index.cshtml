@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_UserHeadercshtml.cshtml";
+}
+
+@if (User.Identity.IsAuthenticated == true)
+{
+    <div class="h3 text-dark mx-auto">
+        Welcome, <span class="text-danger">@User.Identity.Name</span>...
+    </div>
+}
+

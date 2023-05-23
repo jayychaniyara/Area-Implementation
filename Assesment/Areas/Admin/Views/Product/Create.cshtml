@@ -1,0 +1,82 @@
+﻿@model Assesment.DomainModels.Product
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+@using (Html.BeginForm("Create", "Product", new { area = "Admin" }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-row row p-2">
+        <div class="form-group col-md-6">
+
+            @Html.LabelFor(temp => temp.ProductName)
+            @Html.TextBoxFor(temp => temp.ProductName, new { placeholder = "Product Name", @class = "form-control" })
+            @Html.ValidationMessageFor(temp => temp.ProductName)
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="DateOfPurchase">Date Of Purchase</label>
+            <input type="date" class="form-control" id="DateOfPurchase" name="DateOfPurchase" placeholder="Date Of Purchase" />
+            @Html.ValidationMessageFor(temp => temp.DateOfPurchase)
+        </div>
+    </div>
+
+    <div class="form-row row p-2">
+        <div class="form-group col-md-6">
+            @Html.LabelFor(temp => temp.AvailablityStatus, new { @class = "form-check-label" })
+            <div class="form-check">
+                @Html.RadioButtonFor(temp => temp.AvailablityStatus, "InStock", new { @class = "form-check-input", id = "InStock", Checked = "checked" })
+                <label class="form-check-label" for="InStock">In Stock</label>
+            </div>
+            <div class="form-check">
+                @Html.RadioButtonFor(temp => temp.AvailablityStatus, "OutOfStock", new { @class = "form-check-input", id = "OutOfStock" })
+                <label class="form-check-label" for="OutOfStock">Out of Stock</label>
+            </div>
+            @Html.ValidationMessageFor(temp => temp.AvailablityStatus)
+        </div>
+
+        <div class="form-group col-md-6">
+            @Html.LabelFor(temp => temp.CategoryId)
+            @Html.DropDownListFor(temp => temp.CategoryId, new SelectList(ViewBag.Cat, "CategoryId", "CategoryName"), "Please Select", new { @class = "form-control" })
+            @Html.ValidationMessageFor(temp => temp.CategoryId)
+        </div>
+    </div>
+
+    <div class="form-row row p-2">
+        <div class="form-group col-md-6">
+            @Html.LabelFor(temp => temp.BrandId)
+            @Html.DropDownListFor(temp => temp.BrandId, new SelectList(ViewBag.Bd, "BrandId", "BrandName"), "Please Select", new { @class = "form-control" })
+            @Html.ValidationMessageFor(temp => temp.BrandId)
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="Image">Image</label>
+            <input type="file" class="form-control" id="Image" name="Photo" />
+            @Html.ValidationMessageFor(temp => temp.Photo)
+        </div>
+    </div>
+
+    <div class="form-row row p-2">
+        <div class="form-group col-md-6">
+            @Html.LabelFor(temp => temp.Price)
+            @Html.TextBoxFor(temp => temp.Price, new { placeholder = "Price", @class = "form-control" })
+            @Html.ValidationMessageFor(temp => temp.Price)
+        </div>
+
+    </div>
+
+    <div class="form-group p-2">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="Active" id="Active" value="true" checked />
+            <label class="form-check-label" for="Active">
+                Active
+            </label>
+        </div>
+    </div>
+
+    @Html.ValidationSummary()
+    <button type="submit" class="btn btn-success m-2">Create</button>
+    <a class="btn btn-dark" href="/Admin/Product/Index">Cancel</a>
+}

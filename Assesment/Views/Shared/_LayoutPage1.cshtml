@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/downloaded/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.6.4.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/jquery-3.6.4.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/umd/popper.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="~/Scripts/ohter/Account.js"></script>
+    <link rel="stylesheet" href="~/Content/css/AccountController.css" />
+
+    <meta name="viewport" content="width=device-width" />
+    <style>
+        .field-validation-error {
+            color: red;
+        }
+
+        .validation-summary-errors {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="mb-0 p-4">
+        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" role="tab" data-toggle="pill" href="/Account/Login">Login</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" role="tab" data-toggle="pill" href="/Account/Register">Register</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="row p-4">
+        @RenderBody()
+    </div>
+</body>
+</html>

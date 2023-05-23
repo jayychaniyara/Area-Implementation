@@ -1,0 +1,179 @@
+﻿@model List<Assesment.Identity.ApplicationUser>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="row mb-3">
+    <div class="col-8">
+        <h4 class="mb-3">AJAX calls and Web Api Implementation</h4>
+    </div>
+    <div class="col-2">
+        <button type="button" id="activateAll" class="btn btn-outline-success">Activate All</button>
+    </div>
+    <div class="col-2">
+        <button type="button" id="inactivateAll" class="btn btn-outline-danger">Inactivate All</button>
+    </div>
+</div>
+
+
+<input type="hidden" id="loggedInUserId" value="@ViewBag.LoggedInUserId" />
+<table class="table table-dark table-striped usersTable">
+    <thead>
+        <tr>
+            <td class="text-danger">Username</td>
+            <td class="text-danger">Email</td>
+            <td class="text-danger">Mobile</td>
+            <td class="text-danger">Gender</td>
+            <td class="text-danger">Date of Birth</td>
+            <td class="text-danger">Active Status</td>
+            <td class="text-danger">View</td>
+            <td class="text-danger">Edit</td>
+            <td class="text-danger">Delete</td>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<!-- View Modal -->
+<div class="modal fade" id="ViewUserModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">View User Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="editModelDiv">
+                <table class="table table-hover table-striped">
+                    <tr>
+                        <td>User Name</td>
+                        <td>
+                            <span id="viewUserName"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Email</td>
+                        <td>
+                            <span id="viewUserEmail"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Mobile</td>
+                        <td>
+                            <span id="viewUserMobile"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td>
+                            <span id="viewUserGender"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Date of birth</td>
+                        <td>
+                            <span id="viewUserDateOfBirth"></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Modal -->
+<div class="modal fade" id="EditUserModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit User Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form>
+                <div class="modal-body" id="editModelDiv">
+                    <table class="table table-hover table-striped">
+                        <tr>
+                            <td>User Name</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="User Name" id="txtEditUserName" />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Email</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="Email" id="txtEditUserEmail" />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Mobile</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="Mobile" id="txtEditUserMobile" />
+                            </td>
+                        </tr>
+
+                    </table>
+                    <div class="col-md-6 mb-4" id="editUserValidations"></div>
+                    <div class="mt-1 pt-1">
+                        <button type="submit" id="updateUserInfo" class="btn btn-primary btn-m saveButton">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Modal -->
+<div class="modal fade" id="DeleteUserModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete User</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete "<span class="text-danger text-uppercase" id="deleteUserName"></span>"?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" id="deleteUser" class="btn btn-primary" data-bs-dismiss="modal">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="~/Scripts/ohter/User.js"></script>
+<script>
+    // Active and Inactive all users excluding logged in user(Admin)
+    var loggedInUserId = $('#loggedInUserId').val();
+
+    $('#activateAll').click(() => {
+        $.ajax({
+            type: "POST",
+            url: "/api/AccountWebApi/PostActiveStatus?Id=" + loggedInUserId + "&active=" + true,
+            success: (response) => {
+                location.reload();
+            }, error: (error) => {
+                alert(error);
+            }
+        });
+    });
+
+    $('#inactivateAll').click(() => {
+        $.ajax({
+            type: "POST",
+            url: "/api/AccountWebApi/PostActiveStatus?Id=" + loggedInUserId + "&active=" + false,
+            success: (response) => {
+                location.reload();
+            }, error: (error) => {
+                alert(error);
+            }
+        });
+    });
+
+</script>

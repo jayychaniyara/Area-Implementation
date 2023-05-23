@@ -1,0 +1,115 @@
+﻿@model Assesment.ViewModel.RegisterViewModel
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<section class="">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class="mb-3 pb-2 pb-md-0 mb-md-3">Registration Form</h3>
+                        <form>
+                            <input type="hidden" id="isModelValid" value="Model.IsValid" />
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="form-outline">
+                                        @Html.TextBoxFor(temp => temp.Username, new { @class = "form-control", @id = "userNameInput" })
+                                        @Html.LabelFor(temp => temp.Username)
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="form-outline">
+                                        @Html.TextBoxFor(temp => temp.Email, new { @class = "form-control", @id = "emailInput" })
+                                        @Html.LabelFor(temp => temp.Email)
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="form-outline">
+                                        @Html.TextBoxFor(temp => temp.Mobile, new { @class = "form-control", @id = "mobileInput" })
+                                        @Html.LabelFor(temp => temp.Mobile)
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="form-outline">
+                                        @Html.TextBoxFor(temp => temp.DateOfBirth, new { @class = "form-control", @id = "dateOfBirthInput" })
+                                        @Html.LabelFor(temp => temp.DateOfBirth)
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="form-outline">
+                                        @Html.TextBoxFor(temp => temp.Password, new { @class = "form-control", @id = "passwordInput", type = "password" })
+                                        @Html.LabelFor(temp => temp.Password)
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="form-outline">
+                                        @Html.TextBoxFor(temp => temp.ConfirmPassword, new { @class = "form-control", @id = "confirmPasswordInput", type = "password" })
+                                        @Html.LabelFor(temp => temp.ConfirmPassword)
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="mb-2 pb-1">Gender</div>
+
+                                    <div class="form-check form-check-inline">
+                                        @Html.RadioButtonFor(temp => temp.Gender, "Male", new { @checked = "checked" })
+                                        <label class="form-check-label" for="maleGender">Male</label>
+
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        @Html.RadioButtonFor(temp => temp.Gender, "Female")
+                                        <label class="form-check-label" for="femaleGender">Female</label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        @Html.RadioButtonFor(temp => temp.Gender, "Other")
+                                        <label class="form-check-label" for="otherGender">Ohter</label>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-6 mb-4" id="validationSummary"> @Html.ValidationSummary() </div>
+
+                            </div>
+
+                            <div class="mt-1 pt-1">
+
+                                <button type="submit" id="registerNewUser" class="btn btn-primary btn-m registerButton">Register</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript" src="~/Scripts/ohter/Account.js"></script>

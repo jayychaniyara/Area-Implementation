@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1.cshtml";
+}
+
+@if (User.Identity.IsAuthenticated == true)
+{
+    <div class="h3 text-dark mx-auto">
+        Welcome, <span class="text-danger">@User.Identity.Name</span>...
+    </div>
+}
+
+<h4 class="mt-3">ViewData example below :</h4>
+<ul>
+    @foreach (var item in ViewData["viewData"] as List<string>)
+    {
+        <li>@item</li>
+    }
+</ul>
+
+<h4>ViewBag example below :</h4>
+<ul>
+    @foreach (var item in ViewBag.viewBagExample)
+    {
+        <li>@item</li>
+    }
+</ul>
+
+<h4>TempData example below :</h4>
+<ul>
+    @foreach (var item in TempData["tempData"] as List<string>)
+    {
+        <li>@item</li>
+    }
+</ul>

@@ -1,0 +1,55 @@
+﻿@model Assesment.ViewModel.LoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+@using (Html.BeginForm("Login", "Account", FormMethod.Post))
+{
+    <section class="">
+        <div class="container py-5 h-100">
+            <div class="row justify-content-center align-items-center h-100">
+                <div class="col-12 col-lg-9 col-xl-7">
+                    <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                        <div class="card-body p-4 p-md-5">
+                            <h3 class="mb-3 pb-2 pb-md-0 mb-md-3">Login</h3>
+                            <form>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+
+                                        <div class="form-outline">
+                                            @Html.TextBoxFor(temp => temp.Username, new { @class = "form-control" })
+                                            @Html.LabelFor(temp => temp.Username)
+                                        </div>
+
+                                        <div class="form-outline mt-3">
+                                            @Html.TextBoxFor(temp => temp.Password, new { @class = "form-control", type = "password" })
+                                            @Html.LabelFor(temp => temp.Password)
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6 mb-4 d-flex align-items-center order-1 order-lg-2">
+                                        <img src="~/Content/image/loginPage.jpg"
+                                             class="img-fluid" alt="Sample image">
+
+
+                                    </div>
+                                </div>
+
+                                <div class="">
+                                    @Html.ValidationSummary()
+                                </div>
+                                <div class="mt-1 pt-1">
+                                    <button type="submit" class="btn btn-primary btn-m registerButton">Login</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
